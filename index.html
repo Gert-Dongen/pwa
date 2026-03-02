@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 op een rij</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+</head>
+<body>
+ <div class="top-panel">
+  <h1>4 op een rij</h1>
+  <p id="status">Speler rood is aan de beurt</p>
+</div>
+  <div id="board"></div>
+  <button onclick="resetGame()">Reset</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script src="script.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./service-worker.js")
+        .then(() => console.log("Service Worker geregistreerd"))
+        .catch(err => console.log("SW fout:", err));
+    }
+  </script>
+</body>
+</html>
